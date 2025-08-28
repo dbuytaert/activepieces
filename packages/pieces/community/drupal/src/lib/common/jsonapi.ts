@@ -386,7 +386,7 @@ export const drupal = {
    * @example drupal.deleteEntity(auth, 'node', 'article', '12345-uuid')
    */
   async deleteEntity(auth: DrupalAuthType, entityType: string, bundle: string, uuid: string) {
-    const resourcePath = `/jsonapi/${entityType}/${entityType}--${bundle}/${uuid}`;
+    const resourcePath = `/jsonapi/${entityType}/${bundle}/${uuid}`;
     return await jsonApi.delete(auth, resourcePath);
   }
 };
