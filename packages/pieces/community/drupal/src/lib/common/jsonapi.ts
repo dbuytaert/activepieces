@@ -336,7 +336,7 @@ export const drupal = {
    * @example drupal.getEntity(auth, 'node', 'article', '12345-uuid')
    */
   async getEntity(auth: DrupalAuthType, entityType: string, bundle: string, uuid: string) {
-    const resourcePath = `/jsonapi/${entityType}/${entityType}--${bundle}/${uuid}`;
+    const resourcePath = `/jsonapi/${entityType}/${bundle}/${uuid}`;
     return await jsonApi.get(auth, resourcePath);
   },
 
