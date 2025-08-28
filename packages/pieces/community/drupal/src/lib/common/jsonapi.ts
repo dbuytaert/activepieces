@@ -375,7 +375,7 @@ export const drupal = {
    * @example drupal.updateEntity(auth, 'node', 'article', '12345-uuid', { title: 'Updated Title' })
    */
   async updateEntity(auth: DrupalAuthType, entityType: string, bundle: string, uuid: string, entityData: Record<string, any>) {
-    const resourcePath = `/jsonapi/${entityType}/${entityType}--${bundle}/${uuid}`;
+    const resourcePath = `/jsonapi/${entityType}/${bundle}/${uuid}`;
     const jsonApiData = toJsonApiFormat(entityType, bundle, entityData, uuid);
     
     return await jsonApi.update(auth, resourcePath, jsonApiData);
